@@ -16,8 +16,32 @@ if (hayIFA) then {_tiempolim = _tiempolim * 2};
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _tiempolim];
 _fechalimnum = dateToNumber _fechalim;
 _nombredest = [_marcador] call A3A_fnc_localizar;
+_tipoVeh = "";
 
-_tipoVeh = if (_lado == malos) then {vehNATOAA} else {vehCSATAA};
+
+//_tipoVeh = if (_lado == malos) then {vehNATOAA} else {vehCSATAA};  //Original.  always spawned aa veh as target.
+if (_lado == malos) then {
+	_i = floor (random 5);
+	switch(_i) do {
+		case 0: {_tipoVeh = vehNATOAA};
+		case 1: {_tipoVeh = selectRandom vehNATOAPC};
+		case 2: {_tipoVeh = selectRandom vehNATOAPC};
+		case 3: {_tipoVeh = selectRandom vehNATOAPC};
+		case 4: {_tipoVeh = vehNATOTank};
+		//default: {_tipoVeh = selectRandom vehNATOAPC}; //throwing errors. not sure why.
+	};
+} else {
+	_i = floor (random 5);
+	switch(_i) do {
+		case 0: {_tipoVeh = vehCSATAA};
+		case 1: {_tipoVeh = selectRandom vehCSATAPC};
+		case 2: {_tipoVeh = selectRandom vehCSATAPC};
+		case 3: {_tipoVeh = selectRandom vehCSATAPC};
+		case 4: {_tipoVeh = vehCSATTank};
+		//default: {_tipoVeh = selectRandom vehCSATAPC};
+	};
+
+};
 
 [[buenos,civilian],"DES",[format ["We know an enemy armor (%4) is stationed in %1. It is a good chance to destroy or steal it before it causes more damage. Do it before %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,getText (configFile >> "CfgVehicles" >> (_tipoVeh) >> "displayName")],"Steal or Destroy Armor",_marcador],_posicion,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
 _camionCreado = false;

@@ -11,14 +11,14 @@ NATOMortar = "LIB_GrWr34_g";
 staticATmalos = "LIB_FlaK_36";
 staticAAmalos = "LIB_Flakvierling_38";
 NATOPilot = "LIB_GER_pilot";
-vehNATOLightArmed = ["LIB_Kfz1_MG42_sernyt","LIB_SdKfz222"];
+vehNATOLightArmed = ["LIB_Kfz1_MG42_sernyt","LIB_SdKfz222","R71Ger44Camo"];
 vehNATOLightUnarmed = ["LIB_Kfz1_Hood_sernyt","LIB_Kfz1_sernyt"];
 vehNATOTrucks = ["LIB_OpelBlitz_Open_Y_Camo","LIB_OpelBlitz_Tent_Y_Camo"];
 vehNATOAmmoTruck = "LIB_OpelBlitz_Ammo";
 vehNATORepairTruck = "LIB_OpelBlitz_Parm";
 vehNATOLight = vehNATOLightArmed + vehNATOLightUnarmed;
-vehNATOAPC = ["LIB_SdKfz251","LIB_SdKfz234_4","LIB_SdKfz234_3","LIB_SdKfz234_2"];
-vehNATOTank = "LIB_PzKpfwVI_B_tarn51d";
+vehNATOAPC = ["LIB_SdKfz251","LIB_SdKfz234_4","LIB_SdKfz234_3","LIB_SdKfz234_2","LIB_SdKfz251_FFV","pz2f","ifa3_pz3j","ifa3_StuH_42","ifa3_StuG_III_G","ifa3_PzKpfwIV_H"];
+vehNATOTank = "LIB_PzKpfwV";
 vehNATOAA = "LIB_FlakPanzerIV_Wirbelwind";
 vehNATOAttack = vehNATOAPC + [vehNATOTank];
 vehNATOBoat = "B_T_Boat_Armed_01_minigun_F";
@@ -60,8 +60,8 @@ AAStaticNATOB = "not_supported";
 MortStaticNATOB = "not_supported";
 soporteStaticNATOB3 = "not_supported";
 
-armasNATO append ["LIB_MP40","LIB_MP44","LIB_K98","LIB_G43","LIB_MG42","LIB_MP40","LIB_K98ZF39","LIB_RPzB","LIB_M1908"];//
-municionNATO append ["LIB_32Rnd_9x19","LIB_NB39","LIB_30Rnd_792x33","LIB_Shg24","LIB_5Rnd_792x57","LIB_10Rnd_792x57","LIB_50Rnd_792x57","LIB_1Rnd_RPzB","LIB_8Rnd_9x19_P08","LIB_Pwm"];//possible ammo that spawn in NATO ammoboxes
+armasNATO = ["LIB_MP40","LIB_MP44","LIB_K98","LIB_G43","LIB_MG42","LIB_MP40","LIB_K98ZF39","LIB_RPzB","LIB_M1908","LIB_Faustpatrone","LIB_PzFaust_30m","LIB_PzFaust_60m"];
+municionNATO = ["LIB_32Rnd_9x19","LIB_NB39","LIB_30Rnd_792x33","LIB_Shg24","LIB_5Rnd_792x57","LIB_10Rnd_792x57","LIB_50Rnd_792x57","LIB_1Rnd_RPzB","LIB_8Rnd_9x19_P08","LIB_Pwm"];//possible ammo that spawn in NATO ammoboxes
 flagNATOmrk = "LIB_faction_WEHRMACHT";
 
 nameMalos = "Wehrmacht";

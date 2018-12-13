@@ -3,7 +3,7 @@ SDKMortarHEMag = "LIB_8Rnd_60mmHE_M2";
 SDKMortarSmokeMag = "not_supported";
 SDKMGStatic = "LIB_M1919_M2";
 staticATBuenos = "LIB_Pak40";
-staticAABuenos = "LIB_FlaK_30";
+staticAABuenos = "LIB_Flakvierling_38";
 
 staticCrewBuenos = "LIB_US_Bomber_Crew";
 SDKUnarmed = "I_G_Survivor_F";
@@ -17,11 +17,11 @@ SDKMil = ["LIB_WP_Strzelec","LIB_WP_Strzelec"];
 SDKSL = ["LIB_WP_Porucznic","LIB_WP_Porucznic"];
 SDKEng = ["LIB_WP_Starszy_saper","LIB_WP_Starszy_saper"];
 
-vehSDKBike = "LIB_DAK_Kfz1";
+vehSDKBike = "LIB_Kfz1_sernyt";
 vehSDKLightArmed = "LIB_DAK_Kfz1_MG42";
 vehSDKAT = "not_supported";
 vehSDKLightUnarmed = "LIB_US_Willys_MB";
-vehSDKTruck = "LIB_US_GMC_Open";
+vehSDKTruck = "LIB_CIV_FFI_CitC4_3";
 //vehSDKHeli = "I_C_Heli_Light_01_civil_F";
 vehSDKPlane = "LIB_US_NAC_P39";
 vehSDKBoat = "I_C_Boat_Transport_01_F";
@@ -38,7 +38,7 @@ AAStaticSDKB = "not_supported";
 MortStaticSDKB = "not_supported";
 soporteStaticSDKB3 = "not_supported";
 
-civCar = "LIB_GazM1_dirty";
+civCar = "LIB_DAK_Kfz1";
 civTruck = "LIB_DAK_OpelBlitz_Open";
 civHeli = "not_supported";
 civBoat = "C_Boat_Transport_02_F";
