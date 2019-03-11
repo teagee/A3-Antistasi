@@ -130,7 +130,8 @@ hayFFAA = false;
 hayIFA = false;
 myCustomMod = false;
 
-if ("LIB_PTRD" in arifles) then
+if (isClass(configFile/"CfgPatches"/"LIB_Core")) then
+//if ("LIB_PTRD" in arifles) then
 	{
 	hayIFA = true;
 	cascos = [];
