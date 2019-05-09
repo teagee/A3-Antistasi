@@ -107,6 +107,9 @@ else
 					{
 					if (_tipo in SDKATman) then
 						{
+							if (hayIFA) then {
+								_unit addBackpackGlobal "B_LIB_GER_Panzer_Empty";
+							};
 						if !(unlockedAT isEqualTo []) then
 							{
 							_rlauncher = selectRandom unlockedAT;

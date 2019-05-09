@@ -147,7 +147,11 @@ else
 		_morty = _grupo createUnit [staticCrewBuenos, _pos, [],0, "NONE"];
 		_mortero = _tipogrupo createVehicle _pos;
 		_nul = [_mortero] call A3A_fnc_AIVEHinit;
+		if (!hayIFA) then {
 		_mortero attachTo [_camion,[0,-1.5,0.2]];
+		} else {
+			_mortero attachTo [_camion,[0,-1.5,-.5]];
+		};
 		_mortero setDir (getDir _camion + 180);
 		_morty moveInGunner _mortero;
 		};

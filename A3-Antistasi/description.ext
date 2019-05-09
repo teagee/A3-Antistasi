@@ -2,9 +2,9 @@
 #include "dialogs.hpp"
 
 author="Barbolani";
-OnLoadName = "Antistasi Altis";
-OnLoadMission = "Be a Resistance leader, be a hero";
-loadScreen = "pic.JPG";
+OnLoadName = "Armia Krajowa";
+OnLoadMission = "Between the anvil and a steamroller";
+loadScreen = "pic.jpg";
 
 overviewText = "Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.";
 overviewPicture = "pic.jpg";
@@ -75,7 +75,7 @@ class Params
         title = "Game Mode"; // Param name visible in the list
         values[] = {1,2,3,4}; // Values; must be integers; has to have the same number of elements as 'texts'
         texts[] = {"Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"}; // Description of each selectable item
-        default = 1; // Default value; must be listed in 'values' array, otherwise 0 is used
+        default = 3; // Default value; must be listed in 'values' array, otherwise 0 is used
         // Default values that are not whole numbers do not work. Param will default to 0 (or 1 if defined)
     };
     class autoSave
@@ -100,7 +100,7 @@ class Params
         title = "Enable Commander Switch (highest ranked player)";
         values[] = {1,0};
         texts[] = {"Yes","No"};
-        default = 1;
+        default = 0;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class tkPunish
@@ -108,7 +108,7 @@ class Params
         title = "Enable Teamkill Punish";
         values[] = {1,0};
         texts[] = {"Yes","No"};
-        default = 1;
+        default = 0;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class mRadius
@@ -132,7 +132,7 @@ class Params
         title = "Allow Friendly Player Markers";
         values[] = {1,0};
         texts[] = {"Yes","No"};
-        default = 1;
+        default = 0;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class AISkill
@@ -359,8 +359,8 @@ class CfgDebriefing
 	class End1
 	{
 		title = "V I C T O R Y";
-		subtitle = "Altis is Ours!";
-		description = "The population of Altis loves you!<br/>The brave soldiers prooved their valour, and Barbolani, Altis new Prime Minister, could at last to have a nice holidays. A deserved rest in a Greek island, drinking with Petros, his war master.";
+		subtitle = "Chernarus is Ours!";
+		description = "The population of Chernarus loves you!<br/>The brave soldiers prooved their valour, and Barbolani, Chernarus new Prime Minister, could at last to have a nice holidays. A deserved rest in a Greek island, drinking with Petros, his war master.";
 		picture = "n_inf";
 		pictureColor[] = {0.0,0.5,0.0,1};
 	};
@@ -368,15 +368,15 @@ class CfgDebriefing
     {
         title = "Petros is Dead";
         subtitle = "Petros is Dead";
-        description = "Congratulations!: Petros is Dead. Now with rebels without a leader, you may think about joining them, and free Altis";
+        description = "Congratulations!: Petros is Dead. Now with rebels without a leader, you may think about joining them, and free Chernarus";
         picture = "b_unknown";
         pictureColor[] = {0.5,0.0,0.0,1};
     };
     class destroyedCities
     {
-        title = "Altis is Destroyed";
-        subtitle = "Altis got Destroyed by OPFOR";
-        description = "One third of the population in Altis has been murdered by the OPFOR.<br/>Altis no longer exists, nobody wants to live here.";
+        title = "Chernarus is Destroyed";
+        subtitle = "Chernarus got Destroyed by Soviets";
+        description = "One third of the population in Chernarus has been murdered by the Soviets.<br/>Chernarus no longer exists, nobody wants to live here.";
         picture = "b_unknown";
         pictureColor[] = {0.5,0.0,0.0,1};
     };

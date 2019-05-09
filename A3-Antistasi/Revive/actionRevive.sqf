@@ -18,17 +18,35 @@ if !(alive _curado) exitWith
 	_healed
 	};
 if !([_curandero] call A3A_fnc_canFight) exitWith {if (_player) then {hint "You are not able to revive anyone"};_healed};
-if ((not("FirstAidKit" in (items _curandero))) and (not("FirstAidKit" in (items _curado)))) exitWith
-	{
-	if (_player) then {hint format ["You or %1 need a First Aid Kit to be able to revive",name _curado]};
-	if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
-	_healed
+if (!hayACE) then {
+	if ((not("FirstAidKit" in (items _curandero))) and (not("FirstAidKit" in (items _curado)))) exitWith
+		{
+		if (_player) then {hint format ["You or %1 need a First Aid Kit to be able to revive",name _curado]};
+		if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
+		_healed
+		};
+	} else {
+		if ((not("ACE_fieldDressing" in (items _curandero))) and (not("ACE_fieldDressing" in (items _curado)))) exitWith
+			{
+			if (_player) then {hint format ["You or %1 need a First Aid Kit to be able to revive",name _curado]};
+			if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
+			_healed
+			};
 	};
-if ((not("FirstAidKit" in (items _curandero))) and !(_curandero canAdd "FirstAidKit")) exitWith
-	{
-	if (_player) then {hint format ["%1 has a First Aid Kit but you do not have enough space in your inventory to use it",name _curado]};
-	if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
-	_healed
+if (!hayACE) then {
+	if ((not("FirstAidKit" in (items _curandero))) and !(_curandero canAdd "FirstAidKit")) exitWith
+		{
+		if (_player) then {hint format ["%1 has a First Aid Kit but you do not have enough space in your inventory to use it",name _curado]};
+		if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
+		_healed
+		};
+	} else {
+		if ((not("ACE_fieldDressing" in (items _curandero))) and !(_curandero canAdd "ACE_fieldDressing")) exitWith
+			{
+			if (_player) then {hint format ["%1 has a First Aid Kit but you do not have enough space in your inventory to use it",name _curado]};
+			if (_inPlayerGroup) then {_curandero groupChat "I'm out of FA kits!"};
+			_healed
+			};
 	};
 if ((([_curado] call A3A_fnc_fatalWound)) and !([_curandero] call A3A_fnc_isMedic)) exitWith
 	{
@@ -54,10 +72,18 @@ if (_player) then
 	_curado setVariable ["ayudado",_curandero,true];
 	};
 _curandero setVariable ["ayudando",true];
-if (not("FirstAidKit" in (items _curandero))) then
-	{
-	_curandero addItem "FirstAidKit";
-	_curado removeItem "FirstAidKit";
+if (!hayACE) then {
+	if (not("FirstAidKit" in (items _curandero))) then
+		{
+		_curandero addItem "FirstAidKit";
+		_curado removeItem "FirstAidKit";
+		};
+	} else {
+		if (not("ACE_fieldDressing" in (items _curandero))) then
+			{
+			_curandero addItem "ACE_fieldDressing";
+			_curado removeItem "ACE_fieldDressing";
+			};
 	};
 _timer = if ([_curado] call A3A_fnc_fatalWound) then
 			{
@@ -110,7 +136,11 @@ _curandero addEventHandler ["AnimDone",
 				//_curado setVariable ["INCAPACITATED",false,true];
 				//_curandero action ["HealSoldier",_curado];
 				if ([_curandero] call A3A_fnc_isMedic) then {_curado setDamage 0.25} else {_curado setDamage 0.5};
-				_curandero removeItem "FirstAidKit";
+				if (!hayACE) then {
+					_curandero removeItem "FirstAidKit";
+				} else {
+					_curandero removeItem "ACE_fieldDressing";
+				};
 				};
 			};
 		};

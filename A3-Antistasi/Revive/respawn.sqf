@@ -78,6 +78,7 @@ if (_hmd != "") then
 {_unit removeWeaponGlobal _x} forEach weapons _unit;
 removeBackpack _unit;
 removeVest _unit;
+_unit addWeapon "LIB_Binocular_GER";
 _unit setPosATL _posicion;
 _unit setCaptive false;
 _unit setUnconscious false;
