@@ -64,7 +64,9 @@ if (side group player == buenos) then
 	{_nuevo removeWeaponGlobal _x} forEach weapons _nuevo;
 	removeBackpackGlobal _nuevo;
 	removeVest _nuevo;
-	_nuevo addWeapon "LIB_Binocular_GER";
+	if (hayIFA) then {
+		_nuevo addWeapon "LIB_Binocular_GER";
+	};
 	if ((not("ItemGPS" in unlockedItems)) and ("ItemGPS" in (assignedItems _nuevo))) then {_nuevo unlinkItem "ItemGPS"};
 	if ((!hayTFAR) and (!hayACRE) and ("ItemRadio" in (assignedItems player)) and (!haveRadio)) then {player unlinkItem "ItemRadio"};
 	if (!isPlayer (leader group player)) then {(group player) selectLeader player};
